@@ -1,0 +1,45 @@
+@import '../../../scss/styles.scss';
+
+:host {
+    display: flex;
+    @include content-size;
+
+    @include response(lg) {
+        flex-direction: column;
+    }
+}
+
+mat-sidenav-container {
+    height: 100%;
+    overflow: hidden;
+
+    @include response(lg) {
+        @include content-size(100%, 46px);
+    }
+
+    
+    mat-sidenav-content {  
+        @include content-size(44px, 100%);
+        overflow: hidden;
+
+        @include response(lg) {
+            @include content-size(100%, 46px);
+        }
+    }
+}
+
+mat-sidenav {
+    @include content-size(100%, 45px);
+    margin-top: 43px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    @media(min-width: 900px){
+        display: none;
+    }
+}
+
+main {
+    @include content-size;
+}

@@ -1,0 +1,44 @@
+@mixin  flexCenter($justCont: center, $alignIte: center) {
+    display: flex;
+    justify-content: $justCont;
+    align-items: $alignIte;
+  }
+  
+  @mixin flexColumn($justCont: flex-start, $alignIte: center) {
+    display: flex;
+    flex-direction: column;
+    justify-content: $justCont;
+    align-items: $alignIte;
+  }
+  
+  @mixin content-size($width: 100%, $height: 100%) {
+    width: $width;
+    height: $height;
+  }
+  
+  ///////
+  @mixin  response($breakpoint) {
+    @if($breakpoint == xl){
+        @media(max-width: 1440px) {
+          @content;
+        }
+    }
+  
+    @if($breakpoint == lg){
+        @media(max-width: 900px) {
+          @content;
+        }
+    }
+  
+    @if($breakpoint == md){
+        @media(max-width: 540px) {
+          @content;
+        }
+    }
+  
+    @if($breakpoint == sm){
+        @media(max-width: 320px) {
+          @content;
+        }
+    }
+  }

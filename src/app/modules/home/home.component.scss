@@ -1,0 +1,61 @@
+@import '../../../scss/styles.scss';
+
+:host {
+    @include content-size;
+}
+
+.home {
+    @include content-size;
+    @include flexCenter;
+    
+    .home-img {
+        @include content-size;
+        position: absolute;
+        z-index: -10;
+    }
+    
+    .home-img:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        @include content-size;
+        background: #181818;
+        opacity: .6;
+    }
+
+    .typewriter {
+        color: honeydew;
+        width: 100%;
+        @include flexColumn(center, center);
+
+        h2 {
+            font-size: size(xxl);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 900;
+            line-height: size(xxl);
+            opacity: 0.5;
+
+            @include response(lg) {
+                font-size: size(xl);
+            }
+
+            @include response(md) {
+                font-size: size(lg);
+            }
+        }
+    }
+}
+
+
+.beside {
+    font-weight: 400;
+    font-size: size(md);
+    line-height: normal;
+
+    .tw {
+        font-weight: 100;
+        font-size: size(xs);
+    }
+}
+

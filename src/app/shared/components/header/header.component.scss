@@ -1,0 +1,128 @@
+@import '../../../../scss/styles.scss';
+
+mat-toolbar{
+    margin: 0;
+    padding: 0;
+    background-color: color(backgroundCol);
+    color: color(fontCol);
+    @include content-size(44px, 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include response(lg) {
+        flex-direction: row;
+        justify-content: space-between;
+        @include content-size(100%, 44px);
+    }
+
+    @include response(lg) {
+        .navbar-list {
+            display: none;
+        }
+    }
+
+    mat-icon {
+        transition: all .2s ease-in-out;
+    }
+
+    .contact-items {
+        height: 50%;
+        @include flexColumn(flex-end, center);
+
+        @include response(lg) {
+            @include content-size(30%, 44px);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        @include response(md) {
+            width: auto;
+        }
+
+        a {
+            color: color(fontCol);
+
+            &:active {
+                color: color(hoverCol);
+            }
+
+            &:hover {
+                color: color(focusCol);
+            }
+
+            transition: all .2s ease-in-out;
+        }
+
+        .toggle-button {
+            background-color: color(backgroundCol);
+            position: relative;
+
+            @media(min-width: 900px) {
+                display: none;
+            }
+        }
+    }
+}
+
+.logo {
+    width: 44px;
+    background: color(focusCol);
+    text-align: center;
+
+    @include response(lg) {
+        @include content-size(55px, 44px);
+    }
+
+    a {
+        display: block;
+        line-height: 58px;
+        color: color(hoverCol); 
+
+        @include response(lg) {
+            line-height: 44px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            @include content-size;
+            background: linear-gradient(90deg,rgba(0,0,0,.5) 0,rgba(0,0,0,0) 100%);
+
+            @include response(lg) {
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0) 100%);
+            }
+        }
+
+        span {
+            position: relative;
+            font-family: 'Cormorant Garamond';
+            font-size: 28px;
+            font-weight: 700;
+        }
+    }
+}
+
+// contact items
+.linke-din {    
+    @include flexCenter;
+}
+
+.btn {
+    margin: 10px;
+    cursor: pointer;
+
+    @include response(md) {
+        margin: 5px;
+    }
+}
+  
+.icon-bar {
+    @include content-size(22px, 2px);
+    background: color(fontCol);
+    margin: 4px;
+    position: relative;
+}
