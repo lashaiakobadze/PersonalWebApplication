@@ -10,7 +10,7 @@ import Typewriter from 't-writer.js';
 
 export class HomeComponent implements OnInit, AfterViewInit {
   
-  homeImage = '../../../assets/main-img.jpg';
+  homeImage = './assets/main-img.jpg';
 
   @ViewChild('tw') typewriterElement;
   @ViewChild('tw2') typewriterElement2;
