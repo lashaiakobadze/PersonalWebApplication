@@ -14,7 +14,8 @@
 
 html, body {
   height: 100%;
-  width: 100%;  
+  width: 100%;
+  font-family: 'Poppins', sans-serif;  
 }
 
 ul, li {
@@ -27,7 +28,6 @@ a {
 
 body {
   border: none;
-  font-family: 'Poppins', sans-serif;
   font-size: 15px;
   color: #a9a9a9;
   background: #242425;
@@ -35,4 +35,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%
 }
+
 

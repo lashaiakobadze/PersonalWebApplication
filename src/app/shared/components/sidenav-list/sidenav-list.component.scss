@@ -1,18 +1,16 @@
 @import '../../../../scss/styles.scss';
 
-.nav-caption{
-    display: inline-block;
-    padding-left: 6px;
-}
-
-mat-nav-list {
+mat-nav-list {    
     background-color: color(backgroundCol);
     color: color(fontCol);
     @include flexCenter;
     @include content-size(100%, 45px);
+    overflow: hidden;
 
     mat-icon {
         transition: all .4s ease-in-out;
     }
+
+    transition: all 2s ease-in-out;
 }
 

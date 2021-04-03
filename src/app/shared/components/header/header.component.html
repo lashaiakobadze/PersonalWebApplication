@@ -6,10 +6,9 @@
         <ul fxLayoutGap='10px' fxLayout='column' class="navigation-items">
             <li (click)="sharedService.homeClick()">
                 <button mat-icon-button>
-                    <a  
+                    <a 
                         [ngStyle]="{color: sharedService.homeFocus ? '#5ac24e' : '#a9a9a9'}"                        
-                        routerLink="/" 
-                        routerLinkActive="list-item-active" 
+                        routerLink="/"
                         matTooltip="Home"
                         [matTooltipPosition]="TooltipPosition">                                    
                         <mat-icon fxFlex *ngIf="sharedService.homeFocus; else hoverEffectHome;">home</mat-icon>
@@ -85,9 +84,7 @@
         <button mat-icon-button>
             <a
                 href="https://www.facebook.com/lasha.iakobadze.9/"
-                target="blank"
-                matTooltip="facebook"
-                [matTooltipPosition]="TooltipPosition">
+                target="blank">
                 <mat-icon fxFlex>facebook</mat-icon>
             </a>                    
         </button>
@@ -96,8 +93,7 @@
             <a
                 href="https://www.linkedin.com/in/lasha-iakobadze-530b3115a/"
                 target="blank"
-                matTooltip="linkedin"
-                [matTooltipPosition]="TooltipPosition" class="linke-din">
+                class="linke-din">
                 <mat-icon>linkedin</mat-icon>
             </a>                    
         </button>
@@ -105,9 +101,7 @@
         <button mat-icon-button>
             <a 
                 href="https://github.com/"
-                target="blank"
-                matTooltip="GitHub"
-                [matTooltipPosition]="TooltipPosition">
+                target="blank">
                 <p>git</p>
             </a>                    
         </button>

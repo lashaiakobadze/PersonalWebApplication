@@ -11,7 +11,8 @@ import { PortfolioComponent } from './../../modules/portfolio/portfolio.componen
 import { ContactsComponent } from './../../modules/contacts/contacts.component';
 import { AboutComponent } from './../../modules/about/about.component';
 import { HomeComponent } from './../../modules/home/home.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,7 +28,9 @@ import { HomeComponent } from './../../modules/home/home.component';
     CommonModule,
     SharedModule,
     RouterModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ]
 })
 export class DefaultModule {  }

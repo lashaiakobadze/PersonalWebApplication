@@ -22,6 +22,10 @@ mat-toolbar{
         }
     }
 
+    .list-item-active {
+        color: color(focusCol);
+    }
+
     mat-icon {
         transition: all .2s ease-in-out;
     }

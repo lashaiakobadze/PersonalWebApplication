@@ -16,7 +16,6 @@ mat-sidenav-container {
     @include response(lg) {
         @include content-size(100%, 46px);
     }
-
     
     mat-sidenav-content {  
         @include content-size(44px, 100%);
@@ -28,6 +27,7 @@ mat-sidenav-container {
     }
 }
 
+
 mat-sidenav {
     @include content-size(100%, 45px);
     margin-top: 43px;
@@ -38,8 +38,15 @@ mat-sidenav {
     @media(min-width: 900px){
         display: none;
     }
+
+    transition: all 2s ease-in-out;
 }
 
 main {
     @include content-size;
+    overflow: auto;
+
+    router-outlet {
+        height: 100%;
+    }
 }
