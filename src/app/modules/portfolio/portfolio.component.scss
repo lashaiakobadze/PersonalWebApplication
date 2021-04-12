@@ -1,0 +1,111 @@
+@import '../../../scss/styles.scss';
+
+:host {
+    @include content-size;
+    background: linear-gradient(135deg,#1d1e21 0,#3e4246 100%);
+    display: flex; 
+}
+
+
+.portfolio-img {
+    @include contentImg(500px);
+
+    @media (max-width: 1000px) {
+        min-width: 450px;
+    } 
+}
+
+
+@include scroll;
+
+.portfolio {
+    @include content-size;
+    @include flexColumn(flex-start, center);
+    overflow-y: scroll; 
+    padding-bottom: 80px;
+
+    &_title {
+        @include shadowTitle;
+
+        @media (max-width: 1200px) {
+            font-size: 75px;
+        } 
+
+        @include response(md) {
+            font-size: size(lg);
+        }
+    }
+
+    &_projects {
+        @include content-size;
+        padding: 30px;
+        margin-bottom: 50px;
+    }
+
+    &_nav-bar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        h1 {
+            @include sectionTitle;
+            margin-top: 25px;
+            white-space: nowrap;
+
+            @include response(md) {
+                padding-left: 5px;
+                font-size: size(xxs);
+            }
+        }
+
+        .nav-bar {
+            width: 70%;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            @include response(lg){
+                width: 100%;
+            }
+
+            .item {
+                cursor: pointer;
+                @include flexCenter;
+                font-size: size(xs);
+                font-family: 'Poppins', sans-serif;  
+                color: #fff;
+                font-weight: 900;
+                white-space: nowrap;
+
+                @include response(md) {
+                    font-size: size(xxs);
+                }
+
+
+                &_admin {
+                    padding:10px 5px;
+                    @include colorBox;
+                    border-radius: 18px;
+                    color: color(fontCol);
+                    font-size: 13px;
+
+                    &:hover {
+                        @include hoverBox;
+                    }
+                }
+
+                &:hover {
+                    color: color(focusCol);
+                }
+
+                transition: all 0.3s;
+            } 
+
+            .active-link {
+                color: color(focusCol);                
+            }
+        }
+    }
+}
+

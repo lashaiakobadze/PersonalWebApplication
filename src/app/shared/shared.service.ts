@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 
 export class SharedService {
+  // Variables for focus and hover directives 
   homeFocus: boolean; 
   aboutFocus: boolean; 
   portfolioFocus: boolean; 
@@ -13,6 +14,7 @@ export class SharedService {
 
   constructor() { }
 
+  // Methods for focus and hover directives 
   homeClick() {
     this.homeFocus = true;
     this.aboutFocus = this.portfolioFocus = this.resumeFocus = this.contactFocus = false;

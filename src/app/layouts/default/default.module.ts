@@ -1,3 +1,4 @@
+import { AdminPanelComponent } from './../../modules/portfolio/admin-panel/admin-panel.component';
 import { MaterialModule } from './../../material/material/material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -13,7 +14,13 @@ import { AboutComponent } from './../../modules/about/about.component';
 import { HomeComponent } from './../../modules/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProjectsService } from './../../modules/portfolio/projects.service';
 
+import { ProjectComponent } from './../../modules/portfolio/all/project/project.component';
+import { WebAppsComponent } from './../../modules/portfolio/web-apps/web-apps.component';
+import { MarkupsComponent } from './../../modules/portfolio/markups/markups.component';
+import { AllComponent } from './../../modules/portfolio/all/all.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -21,8 +28,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     AboutComponent,
     ContactsComponent,
-    PortfolioComponent,
     ResumeComponent,
+    PortfolioComponent,
+    AllComponent,
+    MarkupsComponent,
+    WebAppsComponent, 
+    ProjectComponent,
+    AdminPanelComponent,
   ],
   imports: [
     CommonModule,
@@ -30,7 +42,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     MaterialModule,
     HttpClientModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBkJs9T87Kn0NKej-X-F6TtBoVPxnXieNI' 
+    })
+  ],
+  providers:[ProjectsService]
 })
 export class DefaultModule {  }

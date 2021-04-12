@@ -1,0 +1,164 @@
+@import '../../../scss/styles.scss';
+
+:host {
+    @include content-size;
+    background: linear-gradient(135deg,#1d1e21 0,#3e4246 100%);
+    display: flex; 
+}
+
+
+.resume-img {
+    @include contentImg(500px);
+}
+
+@include scroll;
+
+.resume {
+    @include content-size(100%, 100%);
+    @include flexColumn(flex-start, center);
+    overflow-y: scroll; 
+    padding-bottom: 80px;
+
+
+    @include response(lg) {
+        width: 100%;
+    }
+
+    &_title {
+        @include shadowTitle;
+    }
+
+    &_work {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 14px 14px 14px 0;
+
+        @include response(md) {
+            @include flexColumn;
+        }
+
+        .experience, .education {
+            width: 47%;
+            @include sectionTitle;
+
+            @include response(md) {
+                width: 90%;
+                margin-top: 50px;
+            }
+    
+            &_content {
+                margin-top: 30px;
+                padding: 30px 30px 0 30px;
+                width: 100%;    
+                
+                @include colorBox;
+
+                &:hover {
+                    @include hoverBox;
+                }
+
+                &_item {
+                    padding: 30px 0;
+
+                    &:first-child {
+                        padding-top: 0;
+                    }
+
+                    .name {
+                        margin: 0 0 5px 0;
+                        font-size: 16px;
+                        color: #fff;
+                        font-weight: 700;
+                    }
+
+                    .date {
+                        margin: 0 0 15px 0;
+                        padding: 0;
+                        position: relative;
+                        display: inline-block;
+                        font-size: 12px;
+                        line-height: 12px;
+                        color: #777;
+                        font-weight: 400;
+
+                        span {
+                            padding: 0 5px;
+                            display: inline-block;
+                        }
+                    }
+
+                    @include paragrap;
+                        
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    
+    &_skils {
+        padding: 70px 14px 0 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        @include response(md) {
+            @include flexColumn;
+        }
+
+        .personal, .profesional {
+            width: 47%;
+            @include sectionTitle;
+
+            @include response(md) {
+                width: 90%;
+                margin-top: 50px;
+            }
+
+            .title {
+                @include sectionTitle;
+            }
+
+            &_skills {
+                margin-top: 30px;
+                width: 100%;    
+                
+                @include colorBox;
+
+                &:hover {
+                    @include hoverBox;
+                }
+
+                li {
+                    position: relative;
+                    padding: 20px 30px;
+                    border-bottom: 1px solid rgba(255,255,255,.1);
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+
+                    .name {
+                        margin: 0 0 10px 0;
+                        font-size: 14px;
+                        line-height: 14px;
+                        color: #fff;
+                        font-weight: 700;
+                    }
+
+                    .progress {
+                        display: block;
+                        width: 100%;
+                        height: 6px;
+                        background: #5ac24e;
+                    }
+                }
+            }
+        }
+    }
+
+}
+

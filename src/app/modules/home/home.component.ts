@@ -10,15 +10,14 @@ import Typewriter from 't-writer.js';
 
 export class HomeComponent implements OnInit, AfterViewInit {
   
-  homeImage = './assets/main-img.jpg';
+  homeImage: string = './assets/main-img.jpg';
 
   @ViewChild('tw') typewriterElement;
   @ViewChild('tw2') typewriterElement2;
   @ViewChild('tw3') typewriterElement3;
 
-  ngOnInit() {
-
-   }
+  ngOnInit() {}
+  
   ngAfterViewInit() {
     const target2 = this.typewriterElement2.nativeElement;
     const target3 = this.typewriterElement3.nativeElement;

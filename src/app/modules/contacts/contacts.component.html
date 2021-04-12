@@ -1,4 +1,6 @@
-<div class="map map-container" #map></div>
+<div  class="map map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2977.6971740787126!2d44.746221314938786!3d41.72705298283297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDQzJzM3LjQiTiA0NMKwNDQnNTQuMyJF!5e0!3m2!1sen!2sge!4v1617827224157!5m2!1sen!2sge" allowfullscreen="" loading="lazy"></iframe>
+</div>
 <div class="contacts">
     <span class="contacts_title">CONTACTS</span>
     <h1><b>Get</b><strong> in Touch</strong></h1>
@@ -34,15 +36,18 @@
     </div>
     <h1><b>Contact</b><strong> Form</strong></h1>
     <div class="contacts_form">
-        <form class="form" [formGroup]="bioSection" (ngSubmit)="callingFunction()" #heroForm="ngForm">
+        <form class="form" [formGroup]="formVar" (ngSubmit)="onSubmit()" #heroForm="ngForm">
             <div class="form_inputs">
-                <input type="text" name="name" placeholder="Full Name" class="name_input" formControlName="Name">
-                <input type="text" name="email" placeholder="Email Address" class="mail_input" formControlName="Email">
+                <input type="text" name="name" placeholder="Full Name" class="name_input" formControlName="username" #username>
+                <input type="text" name="email" placeholder="Email Address" class="mail_input" formControlName="email" #email>
             </div>
-            <textarea name="message" placeholder="Your Message" class="message_area" aria-invalid="true" formControlName="Message"></textarea>
+            <textarea name="message" placeholder="Your Message" class="message_area" formControlName="message"  #message></textarea>
             <div class="form_button"> 
-                <button class="button" type="submit" [disabled]="!bioSection.valid" (click)="heroForm.reset()"><span>Send Message</span><span class="material-icons">arrow_right_alt</span></button>
+                <button class="button" type="submit" (click)="clearForm()"><span>Send Message</span><span class="material-icons">arrow_right_alt</span></button>
             </div>
         </form>
+    </div>
+    <div  class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2977.6971740787126!2d44.746221314938786!3d41.72705298283297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDQzJzM3LjQiTiA0NMKwNDQnNTQuMyJF!5e0!3m2!1sen!2sge!4v1617827224157!5m2!1sen!2sge" allowfullscreen="" loading="lazy"></iframe>
     </div>
 </div>

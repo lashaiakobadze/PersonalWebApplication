@@ -1,40 +1,34 @@
-<mat-nav-list fxLayoutGap='20px'>
+<mat-nav-list fxLayoutGap='20px' [ngClass]="navListIsOpen ? 'show' : 'hide'">
     <button mat-icon-button (click)="sharedService.homeClick()">
-        <a  [ngStyle]="{color: sharedService.homeFocus ? '#5ac24e' : '#a9a9a9'}"
+        <a  
             routerLink="/" 
             routerLinkActive="list-item-active" 
+            [routerLinkActiveOptions]="{exact: true}"
             matTooltip="Home"
-            [matTooltipPosition]="TooltipPosition">                                    
-            <mat-icon fxFlex *ngIf="sharedService.homeFocus; else hoverEffectHome;">home</mat-icon>
-            <ng-template #hoverEffectHome>
-                <mat-icon fxFlex appHover>home</mat-icon>
-            </ng-template>
+            [matTooltipPosition]="TooltipPosition">
+            <mat-icon fxFlex>home</mat-icon>
         </a>                    
     </button>
 
     <button mat-icon-button (click)="sharedService.aboutClick()">
-        <a  [ngStyle]="{color: sharedService.aboutFocus ? '#5ac24e' : '#a9a9a9'}"  
+        <a  
             routerLink="/about" 
             routerLinkActive="list-item-active" 
+            [routerLinkActiveOptions]="{exact: true}"
             matTooltip="About"
             [matTooltipPosition]="TooltipPosition">
-            <mat-icon fxFlex *ngIf="sharedService.aboutFocus; else hoverEffectAbout;">person_outline</mat-icon>
-            <ng-template #hoverEffectAbout>
-                <mat-icon fxFlex appHover>person_outline</mat-icon>
-            </ng-template>
+            <mat-icon fxFlex>person_outline</mat-icon>
         </a>                    
     </button>
 
     <button mat-icon-button (click)="sharedService.resumeClick()">
-        <a  [ngStyle]="{color: sharedService.resumeFocus ? '#5ac24e' : '#a9a9a9'}"
+        <a  
             routerLink="/resume" 
             routerLinkActive="list-item-active" 
+            [routerLinkActiveOptions]="{exact: true}"
             matTooltip="Resume"
             [matTooltipPosition]="TooltipPosition">
-            <mat-icon fxFlex *ngIf="sharedService.resumeFocus; else hoverEffectResume">settings</mat-icon>
-            <ng-template #hoverEffectResume>
-                <mat-icon fxFlex appHover>settings</mat-icon>
-            </ng-template>
+            <mat-icon fxFlex>settings</mat-icon>
         </a>                    
     </button>
 
@@ -42,6 +36,7 @@
         <a  [ngStyle]="{color: sharedService.portfolioFocus ? '#5ac24e' : '#a9a9a9'}"
             routerLink="/portfolio" 
             routerLinkActive="list-item-active" 
+            [routerLinkActiveOptions]="{exact: true}"
             matTooltip="Portfolio"
             [matTooltipPosition]="TooltipPosition">
             <mat-icon fxFlex *ngIf="sharedService.portfolioFocus; else hoverEffectPortfolio;">visibility</mat-icon>
@@ -52,15 +47,13 @@
     </button>
 
     <button mat-icon-button (click)="sharedService.contactClick()">
-        <a  [ngStyle]="{color: sharedService.contactFocus ? '#5ac24e' : '#a9a9a9'}"
+        <a  
             routerLink="/contacts" 
             routerLinkActive="list-item-active" 
+            [routerLinkActiveOptions]="{exact: true}"
             matTooltip="Contacts"
             [matTooltipPosition]="TooltipPosition">
-            <mat-icon fxFlex *ngIf="sharedService.contactFocus; else hoverEffectContacts;">mail_outline</mat-icon>
-            <ng-template #hoverEffectContacts>
-                <mat-icon fxFlex appHover>mail_outline</mat-icon>
-            </ng-template>
+            <mat-icon fxFlex>mail_outline</mat-icon>
         </a>                    
     </button>
 </mat-nav-list>

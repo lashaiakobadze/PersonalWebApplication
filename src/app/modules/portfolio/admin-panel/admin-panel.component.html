@@ -1,0 +1,25 @@
+<div class="admin-panel">
+    <h1 class="admin-panel_title"><b>Admin</b><strong> Panel</strong></h1>
+    <form *ngIf="!projectsService.adminPanelInterface" class="admin-panel_logIn">
+        <input class="input" type="password" [ngClass]="corectPas ? 'corect_pasword' : 'wrong_pasword'"  #adminPas>
+        <button class="button" type="button" (click)="logIn()">Log In</button>
+    </form>
+    <div *ngIf="projectsService.adminPanelInterface" class="admin-panel_interface">
+        <form action="" class="admin-panel_interface_form">
+            <label for="name" >project name</label>
+            <input type="text" class="input" #name>
+
+            <label for="link">project link</label>
+            <input type="text" class="input" #link>
+
+            <label for="image">project image</label>
+            <input type="text" class="input" #image>
+
+            <label for="type">project type</label>
+            <input type="text" class="input" #type>
+
+            <button type="button" class="button" [ngClass]="correctPrj ? 'corect_pasword' : 'wrong_pasword'" (click)="submitProject()">add project</button>
+            <button type="button" class="log-out" (click)="logOut()">Log out</button>
+        </form>
+    </div>
+</div>

@@ -1,16 +1,44 @@
 @import '../../../../scss/styles.scss';
 
-mat-nav-list {    
-    background-color: color(backgroundCol);
-    color: color(fontCol);
-    @include flexCenter;
-    @include content-size(100%, 45px);
-    overflow: hidden;
+.show {
+    opacity: 1;
+    visibility: visible;
+    transition: all 1s ease-in-out;
+}
+ 
+.hide {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s ease-in-out;
+}
 
-    mat-icon {
-        transition: all .4s ease-in-out;
+mat-nav-list {
+    background-color: color(backgroundCol);
+    padding-top: 0;
+    @include flexCenter;    
+
+    @media(min-width: 900px){
+        display: none;
     }
 
-    transition: all 2s ease-in-out;
+    a {
+        color: color(fontCol);
+
+        &:hover {
+            color: color(hoverCol);
+        }
+    }
+
+    .list-item-active {
+        color: color(focusCol);
+
+        &:hover {
+            color: color(focusCol);
+        }
+    }
+
+    mat-icon {
+        transition: all .2s ease-in-out;
+    }
 }
 

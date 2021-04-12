@@ -1,0 +1,14 @@
+<div class="projects">
+    <a
+     *ngFor="let appPrj of appProjects"
+     class="project" 
+     [href]="appPrj.projectLink" 
+     target="_blank"> 
+        <div class="project_img">
+            <img [src]="appPrj.projectImg" [alt]="appPrj.projectName">
+        </div>
+        <div class="project_title">
+            <span>{{ appPrj.projectName }}</span>
+        </div>
+    </a>
+</div>

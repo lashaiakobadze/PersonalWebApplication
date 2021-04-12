@@ -1,12 +1,10 @@
-<mat-sidenav-container>
-    <mat-sidenav-content>
-        <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+<div class="mat-sidenav-container" *ngIf="true">
+    <app-header (openNav)="navBarListOpen($event)"></app-header>
+</div> 
 
-<mat-sidenav #sidenav role="navigation">
-    <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
-</mat-sidenav>
+<div class="mat-sidenav">
+    <app-sidenav-list [navListIsOpen]="openOut"></app-sidenav-list>
+</div>
 
 <main>
     <router-outlet></router-outlet>

@@ -1,0 +1,56 @@
+@import '../../../../scss/styles.scss';
+
+.projects {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 80px;
+
+    @include response(md) {
+        justify-content: space-around;
+    }
+
+
+    .project {
+        width: 45%;
+        max-height: 400px;
+        @include colorBox;
+        @include flexColumn;
+        overflow: hidden;
+        background: none;
+        margin: 20px 0;
+
+        @include response(md) {
+            width: 90%;
+        }
+        
+        &:hover {
+            @include hoverBox;
+        }
+    
+        &_img {
+            @include content-size(100%, 85%);
+            max-height: 440px;
+    
+            img {
+                @include content-size;
+            }
+        }
+            
+        &_img:hover{
+            @include hoverImg;
+        }
+    
+        &_title {
+            @include content-size(100%, 15%);
+            @include flexCenter;
+            font-size: 16px;
+            color: #fff;
+            font-weight: 700;
+        }
+    }
+}
+
+

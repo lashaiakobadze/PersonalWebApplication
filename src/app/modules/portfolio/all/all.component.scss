@@ -1,0 +1,14 @@
+@import '../../../../scss/styles.scss';
+
+
+.projects {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 80px;
+
+    @include response(md) {
+        justify-content: space-around;
+    }
+}

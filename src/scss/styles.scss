@@ -9,22 +9,26 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
-  overflow: hidden;
 }
+
 
 html, body {
   height: 100%;
   width: 100%;
-  font-family: 'Poppins', sans-serif;  
+  font-family: 'Poppins', sans-serif; 
+  overflow: hidden; 
 }
+
 
 ul, li {
   list-style: none;
 }
 
+
 a {
   text-decoration: none;
 }
+
 
 body {
   border: none;

@@ -1,0 +1,127 @@
+@import '../../../../scss/styles.scss';
+
+.admin-panel {
+    @include content-size;
+    @include flexColumn;
+    padding: 50px;
+
+    @include response(md) {
+        padding: 10px;
+    }
+
+    &_title {
+        @include sectionTitle;
+        white-space: nowrap;
+        font-size: size(xl);
+
+        @include response(md) {
+            font-size: size(lg);
+        }
+    }
+
+    &_logIn {
+        padding-top: 50px;
+        width: 100%;
+        @include flexCenter;
+    }
+
+    &_interface {
+        @include content-size;
+        @include flexCenter;
+        padding-top: 20px;   
+        
+        &_form {
+            @include flexColumn;
+            width: 100%;
+
+            input {
+                margin: 10px 0;
+                letter-spacing: normal;
+                font-size: size(xxs);
+                color: color(fontCol);
+            }
+
+            button {
+                margin: 10px 0;
+                white-space: nowrap;
+            }
+
+            label {
+                font-family: 'Poppins', sans-serif; 
+                color: color(hoverCol);
+            }
+        }
+    }
+
+}
+
+.input {
+    @include content-size(50%, 30px);
+    @include colorBox;
+    margin-right: 20px;
+    padding: 0 15px;
+    letter-spacing: 5px;
+    border: none;
+    
+    @include response(md) {
+        width: 100%;
+    }
+
+    &:hover {
+        @include hoverBox;
+    }            
+}
+
+.button {
+    @include content-size(25%, 30px);
+    background-color: color(focusCol);
+    border-radius: 10px;
+    font-weight: 600;
+    border: none;
+    white-space: nowrap;
+
+    @include response(md) {
+        width: 50%;
+    }
+
+    &:hover {
+        color: color(hoverCol);
+        transition: all .3s ease 0s;
+    }
+
+    &:active {
+        opacity: 0.1;
+        transition: opacity .3s ease 0s;
+    }
+}
+
+.log-out {
+    @include content-size(25%, 40px);
+    margin-left: 50%;
+    @include colorBox;
+    color: color(hoverCol);
+
+    @include response(md) {
+        width: 50%;
+    }
+
+    &:hover {
+        @include hoverBox;
+        transition: all .3s ease 0s;
+        color: color(focusCol);
+    }
+
+    &:active {
+        opacity: 0.1;
+        transition: opacity .3s ease 0s;
+    }
+}
+
+.wrong_pasword {
+    border: 1px solid red; 
+    color: red; 
+}
+
+.corect_pasword {
+    border: 1px solid #777;  
+}

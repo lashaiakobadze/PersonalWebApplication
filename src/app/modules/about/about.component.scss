@@ -1,0 +1,188 @@
+@import '../../../scss/styles.scss';
+
+:host {
+    @include content-size;
+    background: linear-gradient(135deg,#1d1e21 0,#3e4246 100%);
+    display: flex; 
+}
+
+
+.about-img {
+    @include contentImg(600px);
+
+    @media (max-width: 1044px){
+        min-width: 500px;
+    }
+}
+
+@include scroll;
+
+
+.about {
+    @include content-size;
+    @include flexColumn(flex-start, center);
+    overflow-y: scroll; 
+    padding-bottom: 80px;
+
+    &_title {
+        @include shadowTitle;
+
+        @media (max-width: 1144px){
+            font-size: 75px;
+        }
+    }
+
+    &_text {
+        margin: 0 0 30px 0;
+        padding: 14px;
+        font-size: 23px;
+        font-weight: 100;
+        font-family: 'Poppins', sans-serif; 
+        line-height: 1.7;
+        
+        strong {
+            color: #5ac24e;
+        }
+    }
+
+    .circle-bts a {
+        margin: 8px 8px;
+        display: inline-block;
+        vertical-align: top;
+        min-width: 44px;
+        height: 44px;
+        background: rgba(255,255,255,.05);
+        color: #fff;
+        text-align: center;
+        box-shadow: 0 0 25px rgb(0 0 0 / 20%);
+        border-radius: 44px;
+        transition: all .3s ease 0s;
+
+        &:hover {
+            @include hoverBox;
+            color: #5ac24e;
+        }
+
+        &:first-child {
+            span {
+                padding:0 20px 0 10px;
+            }
+        }
+
+        span {
+            padding: 0 24px;
+            display: inline-block;
+            vertical-align: top;
+            line-height: 44px;
+            font-weight: 300;
+            transition: all .3s ease 0s;
+        }
+    }
+
+    h1 {
+        @include sectionTitle;
+        margin-top: 72px;
+    }
+
+    &_services {
+        width: 100%;
+        padding: 16px 28px;
+        @include flexCenter(space-between, center);
+        flex-wrap: wrap;
+        @include paragrap;
+
+
+        @include response(md) {
+            justify-content: space-around;
+        }
+
+        .service {
+            width: 45%;
+            padding: 20px;
+            @include colorBox;
+
+            @include response(md) {
+                width: 95%;
+                margin-bottom: 20px;
+            }
+
+            &:hover {
+                @include hoverBox;
+            }
+
+            .icon {
+                span {
+                    color:#5ac24e;
+                    margin: 0;
+                    width: auto;
+                    height: 50px;
+                    line-height: 50px;
+                    font-size: 50px;
+                }
+            }
+
+            .name {
+                margin: 10px 0 10px 0;
+                font-size: 16px;
+                color: #fff;
+                font-weight: 700;
+            }
+
+            p {
+                font-size: size(xs);
+            }
+        }        
+    }
+
+    &_clients {
+        width: 100%;
+        padding: 16px 28px;
+        @include flexCenter(space-between, center);
+        flex-wrap: wrap;
+        @include paragrap;
+
+
+        @include response(md) {
+            justify-content: space-around;
+        }
+
+        .client {
+            padding: 14px;
+            font-size: 0;
+            text-align: center;
+            width: 22%;
+            @include colorBox;
+
+            @include response(lg) {
+                width: 45%;
+                margin-bottom: 20px;
+            }
+
+            @include response(md) {
+                width: 95%;
+            }
+
+            &:hover {
+                @include hoverBox;
+            }
+        
+            a {
+                color: #a9a9a9;
+                text-decoration: none;
+                opacity: 1;
+                outline: 0;
+            }
+
+            img {
+                max-width: 100%;
+                opacity: .6;
+                transition: all .3s ease 0s;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }  
+        }
+    }
+}
+

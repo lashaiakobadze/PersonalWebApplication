@@ -1,1 +1,36 @@
-<p>portfolio works!</p>
+<div class="portfolio">
+    <span class="portfolio_title">PORTFOLIO</span>
+    <div class="portfolio_nav-bar">
+        <h1><b>Get</b><strong> in Touch</strong></h1>
+        <div class="nav-bar">
+            <a             
+             routerLink='all'
+             routerLinkActive="active-link"
+             [routerLinkActiveOptions]="{exact: true}"             
+             class="item"
+             >All</a>
+            <a
+             routerLink='apps' 
+             routerLinkActive="active-link"
+             [routerLinkActiveOptions]="{exact: true}"  
+             class="item"
+             >Apps</a>
+            <a
+             routerLink='markups' 
+             routerLinkActive="active-link"
+             [routerLinkActiveOptions]="{exact: true}"  
+             class="item"
+             >Markup</a>
+             <a
+             routerLink='admin-panel' 
+             routerLinkActive="active-link"
+             [routerLinkActiveOptions]="{exact: true}"  
+             class="item item_admin"
+             >Add project</a>
+        </div>
+    </div>
+    <div class="portfolio_projects">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+<img [src]="portfolioImg" alt="portfolioImg" class="portfolio-img">

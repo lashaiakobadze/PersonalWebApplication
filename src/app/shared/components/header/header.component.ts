@@ -35,22 +35,23 @@ import {
     ]),
   ],
 })
+
 export class HeaderComponent implements OnInit {
-  TooltipPosition = 'after';
-  isHamburguer = true;
+  TooltipPosition: string = 'after';
+  isHamburguer: boolean = true;
+  isOpen: boolean = false;
 
-
-  @Output() public sidenavToggle = new EventEmitter();
-
+  @Output() openNav = new EventEmitter<boolean>();
+  
   constructor(public sharedService: SharedService) { }
 
   ngOnInit() {
   }
 
-  public onToggleSidenav = () => {
-    this.sidenavToggle.emit();
+  onToggleSidenav() {
     this.isHamburguer = !this.isHamburguer; 
+    this.isOpen = !this.isOpen;
+    this.openNav.emit(this.isOpen);
   }
-
 }
 

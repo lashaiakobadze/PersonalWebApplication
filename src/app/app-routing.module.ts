@@ -7,6 +7,11 @@ import { ResumeComponent } from './modules/resume/resume.component';
 import { HomeComponent } from './modules/home/home.component';
 import { AboutComponent } from './modules/about/about.component';
 import { DefaultComponent } from './layouts/default/default.component';
+import { AllComponent } from './modules/portfolio/all/all.component';
+import { MarkupsComponent } from './modules/portfolio/markups/markups.component';
+import { WebAppsComponent } from './modules/portfolio/web-apps/web-apps.component';
+import { AdminPanelComponent } from './modules/portfolio/admin-panel/admin-panel.component';
+
 
 const routes: Routes = [{
   path: '',
@@ -22,7 +27,14 @@ const routes: Routes = [{
       component: ResumeComponent
     }, {
       path: 'portfolio',
-      component: PortfolioComponent
+      component: PortfolioComponent,
+      children: [
+        { path: '', redirectTo: 'all', pathMatch: 'full' },
+        { path: 'all', component: AllComponent },
+        { path: 'markups', component: MarkupsComponent },
+        { path: 'apps', component: WebAppsComponent },
+        { path: 'admin-panel', component: AdminPanelComponent }
+      ]
     }, {
       path: 'contacts',
       component: ContactsComponent
@@ -31,7 +43,9 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes),
+  ],
   exports: [RouterModule]
 })
 
