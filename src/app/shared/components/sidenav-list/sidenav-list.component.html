@@ -1,5 +1,5 @@
 <mat-nav-list fxLayoutGap='20px' [ngClass]="navListIsOpen ? 'show' : 'hide'">
-    <button mat-icon-button (click)="sharedService.homeClick()">
+    <button mat-icon-button>
         <a  
             routerLink="/" 
             routerLinkActive="list-item-active" 
@@ -10,7 +10,7 @@
         </a>                    
     </button>
 
-    <button mat-icon-button (click)="sharedService.aboutClick()">
+    <button mat-icon-button>
         <a  
             routerLink="/about" 
             routerLinkActive="list-item-active" 
@@ -21,7 +21,7 @@
         </a>                    
     </button>
 
-    <button mat-icon-button (click)="sharedService.resumeClick()">
+    <button mat-icon-button>
         <a  
             routerLink="/resume" 
             routerLinkActive="list-item-active" 
@@ -32,21 +32,18 @@
         </a>                    
     </button>
 
-    <button mat-icon-button (click)="sharedService.portfolioClick()">
-        <a  [ngStyle]="{color: sharedService.portfolioFocus ? '#5ac24e' : '#a9a9a9'}"
+    <button mat-icon-button>
+        <a  
             routerLink="/portfolio" 
             routerLinkActive="list-item-active" 
-            [routerLinkActiveOptions]="{exact: true}"
+            [routerLinkActiveOptions]="{exact: false}"
             matTooltip="Portfolio"
             [matTooltipPosition]="TooltipPosition">
-            <mat-icon fxFlex *ngIf="sharedService.portfolioFocus; else hoverEffectPortfolio;">visibility</mat-icon>
-            <ng-template #hoverEffectPortfolio>
-                <mat-icon fxFlex appHover>visibility</mat-icon>
-            </ng-template>
+            <mat-icon fxFlex>visibility</mat-icon>
         </a>                    
     </button>
 
-    <button mat-icon-button (click)="sharedService.contactClick()">
+    <button mat-icon-button>
         <a  
             routerLink="/contacts" 
             routerLinkActive="list-item-active" 

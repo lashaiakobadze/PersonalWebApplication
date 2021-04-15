@@ -45,10 +45,6 @@
 
     &_title {
         @include shadowTitle;
-        
-        @media (max-width: 1200px) {
-            font-size: 80px;
-        }
     }
 
     &_info {

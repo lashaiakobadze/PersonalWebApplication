@@ -13,6 +13,19 @@
         position: absolute;
         z-index: -10;
     }
+
+    .bg {
+        /* The image used */
+        background-image: url("../../../assets/main-img.jpg");
+      
+        /* Full height */
+        height: 100%; 
+      
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     
     .home-img:after {
         content: '';

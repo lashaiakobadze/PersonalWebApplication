@@ -8,8 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class ResumeComponent implements OnInit {
   resumeImg: string = './assets/photoes/IMG_8829.JPG';
 
-  constructor() { }
-
   ngOnInit(): void {
   }
 

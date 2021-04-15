@@ -26,10 +26,6 @@
 
     &_title {
         @include shadowTitle;
-
-        @media (max-width: 1144px){
-            font-size: 75px;
-        }
     }
 
     &_text {

@@ -4,7 +4,7 @@
     </div>
     <div class="navbar-list">
         <ul fxLayoutGap='10px' fxLayout='column' class="navigation-items">
-            <li (click)="sharedService.homeClick()">
+            <li>
                 <button mat-icon-button>
                     <a 
                         routerLink="/"
@@ -16,7 +16,7 @@
                     </a>                                        
                 </button>
             </li>
-            <li (click)="sharedService.aboutClick()">
+            <li>
                 <button mat-icon-button>
                     <a  
                         routerLink="/about" 
@@ -28,7 +28,7 @@
                     </a>                    
                 </button>
             </li>
-            <li (click)="sharedService.resumeClick()"> 
+            <li> 
                 <button mat-icon-button>
                     <a  
                         routerLink="/resume" 
@@ -40,23 +40,19 @@
                     </a>                    
                 </button>
             </li>
-            <li (click)="sharedService.portfolioClick()">
+            <li>
                 <button mat-icon-button>
                     <a  
-                        [ngStyle]="{color: sharedService.portfolioFocus ? '#5ac24e' : '#a9a9a9'}"
                         routerLink="/portfolio" 
                         routerLinkActive="list-item-active" 
-                        [routerLinkActiveOptions]="{exact: true}"             
+                        [routerLinkActiveOptions]="{exact: false}"             
                         matTooltip="Portfolio"
                         [matTooltipPosition]="TooltipPosition">                                                            
-                        <mat-icon fxFlex *ngIf="sharedService.portfolioFocus; else hoverEffectHome;">visibility</mat-icon>
-                        <ng-template #hoverEffectHome>
-                            <mat-icon fxFlex appHover>visibility</mat-icon>
-                        </ng-template>
+                        <mat-icon fxFlex>visibility</mat-icon>
                     </a>                                     
                 </button>
             </li>
-            <li (click)="sharedService.contactClick()">
+            <li>
                 <button mat-icon-button>
                     <a  
                         routerLink="/contacts" 

@@ -78,8 +78,12 @@
   pointer-events: none;
   opacity: .05;
 
-  @media (max-width: 1044px) {
-    font-size: 85px;
+  @media (max-width: 1200px) {
+    font-size: 75px;
+}
+
+  @include response(md) {
+    font-size: size(lg);
   }
 }
 
@@ -111,9 +115,6 @@
 
 @mixin hoverBox {
   box-shadow: 0 15px 55px rgb(0 0 0 / 30%);
-  -moz-box-shadow: 0 15px 55px rgba(0,0,0,.3);
-  -webkit-box-shadow: 0 15px 55px rgb(0 0 0 / 30%);
-  -khtml-box-shadow: 0 15px 55px rgba(0,0,0,.3);
 }
 
 
@@ -122,13 +123,7 @@
   overflow: hidden;
   transform: scale(1.08); 
   transition: all .3s ease 0s;
-  -moz-transition: all .3s ease 0s;
-  -webkit-transition: all .3s ease 0s;
-  -o-transition: all .3s ease 0s;
   border-radius: 18px 18px 0 0;
-  -moz-border-radius: 18px 18px 0 0;
-  -webkit-border-radius: 18px 18px 0 0;
-  -khtml-border-radius: 18px 18px 0 0;
 }
 
 @mixin contentImg($min-width: 40%) {
