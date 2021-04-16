@@ -3,10 +3,9 @@
 :host {
     @include content-size;
     display: flex;
-    flex-direction: row-reverse;
 
     @include response(lg) {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 }
 

@@ -6,7 +6,7 @@ import { Project } from './../../shared/project.model';
   providedIn: 'root'
 })
 export class ProjectsService implements OnInit {
-  adminPanelInterface: boolean = false;
+  adminPanelInterface: boolean = false;   // security value
 
   constructor() { }
 

@@ -1,6 +1,6 @@
-import { DefaultModule } from './layouts/default/default.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { DefaultModule } from './layouts/default/default.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
