@@ -1,39 +1,33 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms'
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.scss']
 })
-export class ContactsComponent implements OnInit, AfterViewInit {
-  formVar: FormGroup;
-  @ViewChild('username') private username: ElementRef;
-  @ViewChild('email') private email: ElementRef;
-  @ViewChild('message') private message: ElementRef;
+export class ContactsComponent implements OnInit {
+  long: number = 44.8271;
+  lat: number = 41.7151;
+  googleMapType: string = 'roadmap';
+  zoomed: 10;
 
-  constructor(private fb: FormBuilder) {}
+  contactForm: FormGroup;
+
+  constructor() {}
 
   ngOnInit() {
-    this.formVar = this.fb.group({
-      username: '',
-      email: '',
-      message: ''
-    });
-  }
-  
-  onSubmit() {
-    console.log(this.formVar.value);
+    this.contactForm = new FormGroup({
+      'username': new FormControl(null, [Validators.required]),
+      'email': new FormControl(null, [Validators.required, Validators.email]),
+      'message': new FormControl(null, Validators.required)
+    })
   }
 
-  clearForm() {
-    this.username.nativeElement.value = this.email.nativeElement.value = this.message.nativeElement.value = '';
+  submitContactForm() {
+    console.log(this.contactForm.value);
+    this.contactForm.reset();
   }
 
-  ngAfterViewInit() {}
-
-  long = 44.8271;
-  lat = 41.7151;
-  googleMapType = 'roadmap';
-  zoome: 10;
 }

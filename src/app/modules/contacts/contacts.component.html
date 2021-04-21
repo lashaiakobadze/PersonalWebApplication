@@ -33,15 +33,40 @@
     </div>
     <h1><b>Contact</b><strong> Form</strong></h1>
     <div class="contacts_form">
-        <form class="form" [formGroup]="formVar" (ngSubmit)="onSubmit()" #heroForm="ngForm">
+        <form class="form" [formGroup]="contactForm" (ngSubmit)="submitContactForm()">
             <div class="form_inputs">
-                <input type="text" name="name" placeholder="Full Name" class="name_input" formControlName="username" #username>
-                <input type="text" name="email" placeholder="Email Address" class="mail_input" formControlName="email" #email>
+                <input
+                 type="text" 
+                 name="name" 
+                 placeholder="Full Name" 
+                 class="name_input" 
+                 formControlName="username"
+                 valid.to
+                 >
+                <input
+                 type="text" 
+                 name="email" 
+                 placeholder="Email Address" 
+                 class="mail_input" 
+                 formControlName="email"
+                 >
             </div>
-            <textarea name="message" placeholder="Your Message" class="message_area" formControlName="message"  #message></textarea>
+            <textarea
+             name="message" 
+             placeholder="Your Message" 
+             class="message_area" 
+             formControlName="message"
+             ></textarea>
             <div class="form_button"> 
-                <button class="button" type="submit" (click)="clearForm()"><span>Send Message</span><span class="material-icons">arrow_right_alt</span></button>
+                <button
+                 class="button" 
+                 type="submit"
+                 [disabled]="!contactForm.valid"
+                 >
+                    <span>Send Message</span><span class="material-icons">arrow_right_alt</span>
+                </button>
             </div>
+            <span *ngIf="!contactForm.valid && contactForm.touched">Please enter valid information!</span>
         </form>
     </div>
     <div  class="map-container">

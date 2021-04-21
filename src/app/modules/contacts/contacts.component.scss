@@ -96,6 +96,10 @@
                 border-bottom: 1px solid #777;  
             }
 
+            input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+                border-bottom: 1px solid red;
+            }
+
             .name_input, .mail_input {
                 @include content-size(45%, 60px);       
             }
@@ -110,12 +114,15 @@
                 border: none;
                 cursor: pointer;
                 font-weight: 600;
-                font-family: 'Poppins', sans-serif;  
+                font-family: 'Poppins', sans-serif; 
                 
+                .material-icons {
+                    transition: margin-left .5s ease-in-out .2s;
+                }
+
                 &:hover {
                     .material-icons {
                         margin-left: 10px;
-                        transition: all .5s ease-in-out .5s;
                     }
                 }
             }

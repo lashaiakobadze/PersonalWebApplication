@@ -33,6 +33,5 @@ export class ProjectsService implements OnInit {
 
   addProject(project: Project) {
     this.projects.push(project);
-    console.log(this.projects);
   }
 }

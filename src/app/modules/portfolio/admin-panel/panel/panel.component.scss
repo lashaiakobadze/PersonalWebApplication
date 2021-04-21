@@ -25,6 +25,10 @@
                 color: color(fontCol);
             }
 
+            input.ng-invalid.ng-touched {
+                border-bottom: 1px solid red;
+            }
+
             button {
                 margin: 10px 0;
                 white-space: nowrap;
@@ -56,10 +60,11 @@
     border-radius: 10px;
     font-weight: 600;
     border: none;
+    transition: color .3s ease 0s;
+
 
     &:hover {
-        color: color(hoverCol);
-        transition: all .3s ease 0s;
+        color: black;
     }
 
     &:active {
@@ -85,11 +90,3 @@
     }
 }
 
-.wrong_pasword {
-    border: 1px solid red; 
-    color: red; 
-}
-
-.corect_pasword {
-    border: 1px solid #777;  
-}

@@ -13,7 +13,7 @@ import { ContactsComponent } from './../../modules/contacts/contacts.component';
 import { AboutComponent } from './../../modules/about/about.component';
 import { HomeComponent } from './../../modules/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProjectsService } from './../../modules/portfolio/projects.service';
 import { PageNotFoundComponent } from './../../modules/page-not-found/page-not-found.component';
 import { AdminPanelComponent } from './../../modules/portfolio/admin-panel/admin-panel.component';
@@ -55,6 +55,7 @@ import { CanDeactivateGuard } from './../../modules/portfolio/can-deactivate-gua
     MaterialModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBkJs9T87Kn0NKej-X-F6TtBoVPxnXieNI' 
     })

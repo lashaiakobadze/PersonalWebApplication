@@ -1,6 +1,6 @@
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProjectsService } from './../../projects.service';
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-admin',
@@ -8,16 +8,16 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
-
-  private password: any = 'portfolio';
+  private password: unknown = 'portfolio';
   corectPas: boolean = true;
   inputPas: string;
 
   @ViewChild('adminPas') adminPas: ElementRef;
     
-  constructor(public projectsService: ProjectsService, 
-              private router: Router, 
-              private route: ActivatedRoute) { }
+  constructor(
+    public projectsService: ProjectsService, 
+    private router: Router, 
+    private route: ActivatedRoute) { }
 
   ngOnChanges() {
     this.inputPas = this.adminPas.nativeElement.value;
